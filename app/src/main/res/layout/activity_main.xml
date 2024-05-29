@@ -1,18 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/background"
+    android:paddingHorizontal="@dimen/body1">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/main_addDebt"
+        android:layout_marginTop="@dimen/body2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Thêm công nợ công nợ"
+        android:textSize="@dimen/body1"
+        android:paddingVertical="@dimen/body1"
+        android:fontFamily="@font/roboto_bold"/>
+    <Button
+        android:id="@+id/main_managementDebt"
+        android:layout_marginTop="@dimen/body2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Xem công nợ công nợ"
+        android:textSize="@dimen/body1"
+        android:paddingVertical="@dimen/body1"
+        android:fontFamily="@font/roboto_bold"/>
+    <Button
+        android:id="@+id/main_addStatistic"
+        android:layout_marginTop="@dimen/body2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thêm báo cáo thống kê"
+        android:textSize="@dimen/body1"
+        android:paddingVertical="@dimen/body1"
+        android:fontFamily="@font/roboto_bold"/>
+    <Button
+        android:id="@+id/main_managementStatistic"
+        android:layout_marginTop="@dimen/body2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Xem báo cáo thống kê"
+        android:textSize="@dimen/body1"
+        android:paddingVertical="@dimen/body1"
+        android:fontFamily="@font/roboto_bold"/>
+    <Button
+        android:id="@+id/main_logOut"
+        android:layout_marginTop="@dimen/body2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng xuất"
+        android:textSize="@dimen/body1"
+        android:paddingVertical="@dimen/body1"
+        android:fontFamily="@font/roboto_bold"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

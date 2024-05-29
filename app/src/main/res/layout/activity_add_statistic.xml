@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp"
+    tools:context=".AddDebt"
     android:background="@color/background"
-    android:gravity="start"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,67 +13,57 @@
         android:orientation="horizontal"
         android:layout_marginTop="@dimen/body3">
         <ImageButton
-            android:id="@+id/signUp_back"
+            android:id="@+id/addStatistic_back"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/arrow_left"
             android:contentDescription="@string/app_name"
             android:background="@color/background"/>
         <TextView
-            android:id="@+id/addDebt_textHeading"
+            android:id="@+id/addStatistic_textHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Quay lại"
+            android:text="Thêm tóm tắt sách"
             android:textSize="@dimen/heading2"
             android:fontFamily="@font/roboto_bold"
             android:gravity="start"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="@dimen/body2"
-        android:layout_marginTop="100dp">
-        <TextView
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Đăng kí"
-            android:textColor="@color/text"
-            android:textSize="@dimen/heading2"
-            android:fontFamily="@font/roboto_bold"/>
+        android:padding="@dimen/body1">
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:hintEnabled="false"
             android:layout_marginTop="@dimen/body1">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/signUp_user"
+                android:id="@+id/addStatistic_idStatistic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_view"
                 android:backgroundTint="@color/white"
                 android:textColor="@color/black"
                 android:ems="10"
-                android:drawableStart="@drawable/user"
+                android:paddingHorizontal="@dimen/body3"
                 android:drawablePadding="@dimen/body3"
-                android:hint="Tài khoản"
+                android:paddingVertical="@dimen/heading3"
+                android:hint="Mã báo cáo thống kê"
                 android:fontFamily="@font/roboto"
                 android:textColorHint="@color/black"
                 android:inputType="text"
                 android:textSize="@dimen/body1"
                 android:layout_marginTop="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:hintEnabled="false"
-            app:passwordToggleEnabled="true"
             android:layout_marginTop="@dimen/body1">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/signUp_password"
+                android:id="@+id/addStatistic_revenue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_view"
@@ -83,12 +72,11 @@
                 android:ems="10"
                 android:paddingHorizontal="@dimen/body3"
                 android:drawablePadding="@dimen/body3"
-                android:paddingVertical="@dimen/body1"
-                android:drawableStart="@drawable/unlock"
-                android:hint="Mật khẩu"
+                android:paddingVertical="@dimen/heading3"
+                android:hint="Doanh thu"
                 android:fontFamily="@font/roboto"
                 android:textColorHint="@color/black"
-                android:inputType="textPassword"
+                android:inputType="number"
                 android:textSize="@dimen/body1"
                 android:layout_marginTop="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -96,10 +84,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:hintEnabled="false"
-            app:passwordToggleEnabled="true"
             android:layout_marginTop="@dimen/body1">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/signUp_ComfirmPassword"
+                android:id="@+id/addStatistic_expense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_view"
@@ -108,25 +95,46 @@
                 android:ems="10"
                 android:paddingHorizontal="@dimen/body3"
                 android:drawablePadding="@dimen/body3"
-                android:paddingVertical="@dimen/body1"
-                android:drawableStart="@drawable/unlock"
-                android:hint="Xác nhận mật khẩu"
+                android:paddingVertical="@dimen/heading3"
+                android:hint="Chi phí"
                 android:fontFamily="@font/roboto"
                 android:textColorHint="@color/black"
-                android:inputType="textPassword"
+                android:inputType="number"
+                android:textSize="@dimen/body1"
+                android:layout_marginTop="10dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintEnabled="false"
+            android:layout_marginTop="@dimen/body1">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addStatistic_tax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_view"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:ems="10"
+                android:paddingHorizontal="@dimen/body3"
+                android:drawablePadding="@dimen/body3"
+                android:paddingVertical="@dimen/heading3"
+                android:hint="Thuế"
+                android:fontFamily="@font/roboto"
+                android:textColorHint="@color/black"
+                android:inputType="number"
                 android:textSize="@dimen/body1"
                 android:layout_marginTop="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <Button
-            android:id="@+id/signUp_button"
+            android:id="@+id/addDebt_saveData"
             android:layout_marginTop="@dimen/body2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Đăng kí"
+            android:text="Lưu"
             android:textSize="@dimen/body1"
             android:paddingVertical="@dimen/body1"
             android:fontFamily="@font/roboto_bold"/>
-
     </LinearLayout>
-
 </LinearLayout>

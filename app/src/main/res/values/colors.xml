@@ -5,6 +5,7 @@
 
     <color name="background">#FF5A3FE1</color>
     <color name="primary">#FF3314C7</color>
+    <color name="button">#FFAC9FF0</color>
     <color name="text">#FFECECEC</color>
 
 </resources>

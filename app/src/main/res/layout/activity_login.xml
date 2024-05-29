@@ -94,6 +94,7 @@
                 android:textSize="@dimen/body1"
                 android:fontFamily="@font/roboto"/>
             <TextView
+                android:id="@+id/login_signUp"
                 android:gravity="end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

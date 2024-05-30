@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Thêm tóm tắt sách"
+            android:text="Thêm công nợ"
             android:textSize="@dimen/heading2"
             android:fontFamily="@font/roboto_bold"
             android:gravity="start"/>
@@ -114,10 +114,9 @@
                 android:layout_height="wrap_content"
                 android:text="Nợ"
                 android:layout_weight="1"
+                android:paddingVertical="@dimen/body2"
                 android:gravity="center"
-                android:textSize="@dimen/body1"
-                android:background="@drawable/background_view"
-                android:backgroundTint="@color/button"/>
+                android:textSize="@dimen/body1"/>
 
             <TextView
                 android:layout_width="20dp"
@@ -131,9 +130,8 @@
                 android:text="Có"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="@dimen/body1"
-                android:background="@drawable/background_view"
-                android:backgroundTint="@color/primary"/>
+                android:paddingVertical="@dimen/body2"
+                android:textSize="@dimen/body1"/>
         </LinearLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"

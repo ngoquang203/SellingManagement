@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Thêm tóm tắt sách"
+            android:text="Thêm báo cáo thống kê"
             android:textSize="@dimen/heading2"
             android:fontFamily="@font/roboto_bold"
             android:gravity="start"/>
@@ -128,7 +128,7 @@
                 android:layout_marginTop="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <Button
-            android:id="@+id/addDebt_saveData"
+            android:id="@+id/addStatistic_saveData"
             android:layout_marginTop="@dimen/body2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

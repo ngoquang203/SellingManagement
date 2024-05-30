@@ -1,5 +1,7 @@
 package com.example.sellingmanagement.Dataset;
 
+import android.util.Log;
+
 import com.example.sellingmanagement.SQLServerManagement.SQLServerHelper;
 
 import java.sql.Connection;
@@ -33,11 +35,11 @@ public class Statistic {
         ResultSet rs = statement.executeQuery(sql);
         while (rs.next()) {
             list.add(new Statistic(
-                    rs.getString("1").trim(), // Lấy dữ liệu
-                    rs.getString("2").trim(),
-                    rs.getLong("3"),
-                    rs.getLong("4"),
-                    rs.getLong("5")));// Đọc dữ liệu từ ResultSet
+                    rs.getString(1).trim(), // Lấy dữ liệu
+                    rs.getString(2).trim(),
+                    rs.getLong(3),
+                    rs.getLong(4),
+                    rs.getLong(5)));// Đọc dữ liệu từ ResultSet
         }
         statement.close(); // Đóng đối tương statement
         connection.close();// Đóng kết nối
@@ -45,7 +47,7 @@ public class Statistic {
     }
 
     // hàm ínsert báo cáo thống kê
-    public static void insertList(String idStatistic,String id,long revenue,long expense,long tax) throws SQLException{
+    public static void insertList(String idStatistic,String id,String revenue,String expense,String tax) throws SQLException{
         Connection connection = SQLServerHelper.connectionSQLSever(); // Kết nối với SQL Server
         Statement statement = connection.createStatement(); // Tạo đối tượng Statement.
         String sql = "insert into Statistic(IdStatistic,ID,Revenue,Expense,Tax) values ('" + idStatistic + "','" + id +
@@ -56,10 +58,11 @@ public class Statistic {
     }
 
     // hàm update báo cáo thống kê
-    public static void updateList(String idStatistic,long revenue,long expense,long tax) throws SQLException{
+    public static void updateList(String idStatistic,String revenue,String expense,String tax) throws SQLException{
         Connection connection = SQLServerHelper.connectionSQLSever(); // Kết nối với SQL Server
         Statement statement = connection.createStatement(); // Tạo đối tượng Statement.
-        String sql = "update Statistic set Revenue = " + revenue + ",Expense = " + expense + ",Tax = " + tax + "= where IdStatistic = '" + idStatistic + "'"; // Câu lênh SQL Server sửa đổi thông tin báo cáo thống kê
+        String sql = "update Statistic set Revenue = " + revenue + ",Expense = " + expense + ",Tax = " + tax + " where IdStatistic = '" + idStatistic + "'"; // Câu lênh SQL Server sửa đổi thông tin báo cáo thống kê
+        Log.e("Data",sql);
         statement.execute(sql); // Thực thi câu lệnh
         statement.close(); // Đóng đối tượng Statement
         connection.close(); // Đóng kết nối

@@ -3,6 +3,7 @@ package com.example.sellingmanagement;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,7 @@ public class Login extends AppCompatActivity {
     private TextInputEditText ID,Passwords;
     private Button buttonLogin;
     private TextView buttonSignUp;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,7 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this, "Bạn chưa nhập tài khoản mật khẩu", Toast.LENGTH_SHORT).show();
                 }
                 else if(id.equals(login.getID()) && passWords.equals(login.getPasswords())){ // nhập chính xác chuyển sang màn hình main
+                    sharedPreferences.edit().putString("ID",id).commit();
                     Intent intent = new Intent(Login.this, MainActivity.class);
                     startActivity(intent);
                 }else{ // kiểm tra ID với password là sai
@@ -72,6 +75,7 @@ public class Login extends AppCompatActivity {
     // hàm khởi tạo giá trị
     private void Init() {
         // ánh xạ View
+        sharedPreferences = getSharedPreferences("loginData",MODE_PRIVATE);
         ID = findViewById(R.id.login_user);
         Passwords = findViewById(R.id.login_password);
         buttonLogin = findViewById(R.id.login_button);
